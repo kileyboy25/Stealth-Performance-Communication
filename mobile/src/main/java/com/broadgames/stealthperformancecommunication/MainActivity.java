@@ -4,8 +4,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.broadgames.stealthperformancecommunication.session.Session;
 
 public class MainActivity extends AppCompatActivity {
+
+    Session user_Session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,5 +40,24 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void checkLogin(View view){
+        EditText loginEditText = (EditText)findViewById(R.id.loginText);
+        EditText passwordEditText = (EditText)findViewById(R.id.passwordText);
+        if(loginEditText.getText().toString().equalsIgnoreCase("login") &&
+                passwordEditText.getText().toString().equalsIgnoreCase("password")){
+            Toast.makeText(this, loginEditText.getText().toString()+" logged in as Super-User",
+                    Toast.LENGTH_LONG).show();
+            user_Session = new Session(Session.CLIENT_QUATERBACK);
+            if(user_Session.getUser_session()==Session.CLIENT_QUATERBACK){
+                
+            }
+        } else {
+            Toast.makeText(this, "Incorrect Login Credentials",
+                    Toast.LENGTH_LONG).show();
+            loginEditText.setText("");
+            passwordEditText.setText("");
+        }
     }
 }
