@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:weightSum="1"
+        android:gravity="center">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_weight="0.3333"
+            android:layout_height="0dp">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/colorButtonRed"
+                android:layout_below="@+id/numberButton2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_weight="1"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:background="#ff0000" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/colorButtonBlue"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:background="#0000ff" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/colorButtonGreen"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:background="#00ff00" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_weight="0.3333"
+            android:layout_height="0dp" >
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/colorButtonPink"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_weight="1"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:background="#ff00fe" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/colorButtonOrange"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:background="#ff8f00" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/colorButtonCyan"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:background="#00fffc" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_weight="0.3333"
+            android:layout_height="0dp" >
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/colorButtonViolet"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_weight="1"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:background="#b609ff" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/colorButtonYellow"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:background="#fffb00" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/colorButtonGray"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:background="#919191" />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>
