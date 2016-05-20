@@ -18,11 +18,7 @@
         </activity>
         <activity
             android:name=".ChooseColorActivity"
-            android:label="@string/title_activity_choose_color"
-            android:parentActivityName=".MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.broadgames.stealthperformancecommunication.MainActivity" />
+            android:label="@string/title_activity_choose_color">
         </activity>
         <activity
             android:name=".ChooseLetterActivity"
@@ -30,10 +26,14 @@
         </activity>
         <activity
             android:name=".ChooseNumberActivity"
-            android:label="@string/title_activity_choose_number" >
+            android:label="@string/title_activity_choose_number"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.broadgames.stealthperformancecommunication.MainActivity" />
         </activity>
         <activity
-            android:name=".session.ConfirmationActivity"
+            android:name=".ConfirmationActivity"
             android:label="@string/title_activity_confirmation" >
         </activity>
     </application>

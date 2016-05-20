@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+
+import com.broadgames.stealthperformancecommunication.session.Session;
 
 public class ChooseNumberActivity extends AppCompatActivity {
 
@@ -38,6 +41,8 @@ public class ChooseNumberActivity extends AppCompatActivity {
     }
 
     public void selectNumber(View view){
+        Button button = (Button) findViewById(view.getId());
+        Session.message += button.getText() + " ";
         Intent intent = new Intent(this, ChooseLetterActivity.class);
         startActivity(intent);
     }

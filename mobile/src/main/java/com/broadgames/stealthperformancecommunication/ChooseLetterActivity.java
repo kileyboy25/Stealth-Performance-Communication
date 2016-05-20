@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.broadgames.stealthperformancecommunication.session.Session;
+
 public class ChooseLetterActivity extends AppCompatActivity {
 
     @Override
@@ -39,8 +41,9 @@ public class ChooseLetterActivity extends AppCompatActivity {
     }
 
     public void selectLetter(View view){
+        Button button = (Button) findViewById(view.getId());
+        Session.message += button.getText() + " ";
         Intent intent = new Intent(this, ChooseColorActivity.class);
-        
         startActivity(intent);
     }
 }

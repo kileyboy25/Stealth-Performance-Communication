@@ -8,7 +8,7 @@ public class Session {
     public static int CLIENT_PLAYER=2;
     private int user_session;
     public static String message = "";
-
+    public static String tempMessage = "";
     public int getUser_session() {
         return user_session;
     }

@@ -1,13 +1,17 @@
 package com.broadgames.stealthperformancecommunication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+
+import com.broadgames.stealthperformancecommunication.session.Session;
 
 public class ChooseColorActivity extends AppCompatActivity {
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +40,16 @@ public class ChooseColorActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Session.message = Session.tempMessage;
+    }
+
     public void selectColor(View view){
-        
+        Button button = (Button) findViewById(view.getId());
+        Session.message += button.getText();
+        Intent intent = new Intent(this, ConfirmationActivity.class);
+        startActivity(intent);
     }
 }
