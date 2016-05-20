@@ -1,25 +1,24 @@
-package com.broadgames.stealthperformancecommunication;
+package com.broadgames.stealthperformancecommunication.session;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
-public class ChooseLetterActivity extends AppCompatActivity {
+import com.broadgames.stealthperformancecommunication.R;
+
+public class ConfirmationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_letter);
+        setContentView(R.layout.activity_confirmation);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_choose_letter, menu);
+        getMenuInflater().inflate(R.menu.menu_confirmation, menu);
         return true;
     }
 
@@ -36,11 +35,5 @@ public class ChooseLetterActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void selectLetter(View view){
-        Intent intent = new Intent(this, ChooseColorActivity.class);
-        
-        startActivity(intent);
     }
 }

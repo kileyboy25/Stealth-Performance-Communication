@@ -19,6 +19,7 @@
             android:layout_height="0dp">
 
             <Button
+                android:text="@string/color_red"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/colorButtonRed"
@@ -26,19 +27,21 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_weight="1"
-                android:textSize="@dimen/notification_large_icon_width"
-                android:background="#ff0000" />
+                android:background="#ff0000"
+                android:onClick="selectColor"/>
 
             <Button
+                android:text="@string/color_blue"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/colorButtonBlue"
                 android:layout_gravity="bottom"
                 android:layout_weight="1"
-                android:textSize="@dimen/notification_large_icon_width"
-                android:background="#0000ff" />
+                android:background="#0000ff"
+                android:onClick="selectColor"/>
 
             <Button
+                android:text="@string/color_green"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/colorButtonGreen"
@@ -47,8 +50,8 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:textSize="@dimen/notification_large_icon_width"
-                android:background="#00ff00" />
+                android:background="#00ff00"
+                android:onClick="selectColor"/>
         </LinearLayout>
 
         <LinearLayout
@@ -58,6 +61,7 @@
             android:layout_height="0dp" >
 
             <Button
+                android:text="@string/color_pink"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/colorButtonPink"
@@ -65,19 +69,21 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_weight="1"
-                android:textSize="@dimen/notification_large_icon_width"
-                android:background="#ff00fe" />
+                android:background="#ff00fe"
+                android:onClick="selectColor"/>
 
             <Button
+                android:text="@string/color_orange"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/colorButtonOrange"
                 android:layout_gravity="bottom"
                 android:layout_weight="1"
-                android:textSize="@dimen/notification_large_icon_width"
-                android:background="#ff8f00" />
+                android:background="#ff8f00"
+                android:onClick="selectColor"/>
 
             <Button
+                android:text="@string/color_cyan"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/colorButtonCyan"
@@ -86,8 +92,8 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:textSize="@dimen/notification_large_icon_width"
-                android:background="#00fffc" />
+                android:background="#00fffc"
+                android:onClick="selectColor"/>
         </LinearLayout>
 
         <LinearLayout
@@ -97,6 +103,7 @@
             android:layout_height="0dp" >
 
             <Button
+                android:text="@string/color_purple"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/colorButtonViolet"
@@ -104,19 +111,21 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_weight="1"
-                android:textSize="@dimen/notification_large_icon_width"
-                android:background="#b609ff" />
+                android:background="#b609ff"
+                android:onClick="selectColor"/>
 
             <Button
+                android:text="@string/color_yellow"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/colorButtonYellow"
                 android:layout_gravity="bottom"
                 android:layout_weight="1"
-                android:textSize="@dimen/notification_large_icon_width"
-                android:background="#fffb00" />
+                android:background="#fffb00"
+                android:onClick="selectColor"/>
 
             <Button
+                android:text="@string/color_gray"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:id="@+id/colorButtonGray"
@@ -125,8 +134,8 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:textSize="@dimen/notification_large_icon_width"
-                android:background="#919191" />
+                android:background="#919191"
+                android:onClick="selectColor"/>
         </LinearLayout>
 
     </LinearLayout>

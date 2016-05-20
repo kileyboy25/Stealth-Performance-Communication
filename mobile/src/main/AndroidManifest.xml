@@ -32,6 +32,10 @@
             android:name=".ChooseNumberActivity"
             android:label="@string/title_activity_choose_number" >
         </activity>
+        <activity
+            android:name=".session.ConfirmationActivity"
+            android:label="@string/title_activity_confirmation" >
+        </activity>
     </application>
 
 </manifest>

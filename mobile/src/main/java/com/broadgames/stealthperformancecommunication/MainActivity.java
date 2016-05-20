@@ -1,5 +1,6 @@
 package com.broadgames.stealthperformancecommunication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -51,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.LENGTH_LONG).show();
             user_Session = new Session(Session.CLIENT_QUATERBACK);
             if(user_Session.getUser_session()==Session.CLIENT_QUATERBACK){
-                
+                Intent intent = new Intent(this, ChooseNumberActivity.class);
+                startActivity(intent);
             }
         } else {
             Toast.makeText(this, "Incorrect Login Credentials",

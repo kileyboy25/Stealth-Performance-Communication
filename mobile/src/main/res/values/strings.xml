@@ -23,7 +23,22 @@
     <string name="number_7">7</string>
     <string name="number_8">8</string>
     <string name="number_9">9</string>
+    <!--Colors-->
+    <string name="color_blue">blue</string>
+    <string name="color_red">red</string>
+    <string name="color_green">green</string>
+    <string name="color_cyan">cyan</string>
+    <string name="color_purple">purple</string>
+    <string name="color_gray">gray</string>
+    <string name="color_yellow">yellow</string>
+    <string name="color_pink">pink</string>
+    <string name="color_orange">orange</string>
+
+    <string name="confirm">Confirm</string>
+    <string name="start_over">Start Over</string>
+
     <string name="title_activity_choose_color">ChooseColorActivity</string>
     <string name="title_activity_choose_letter">ChooseLetterActivity</string>
     <string name="title_activity_choose_number">ChooseNumberActivity</string>
+    <string name="title_activity_confirmation">ConfirmationActivity</string>
 </resources>
