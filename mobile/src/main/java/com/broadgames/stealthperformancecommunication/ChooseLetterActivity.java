@@ -40,8 +40,15 @@ public class ChooseLetterActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Session.message = Session.tempMessage;
+    }
+
     public void selectLetter(View view){
         Button button = (Button) findViewById(view.getId());
+        Session.tempMessage = Session.message;
         Session.message += button.getText() + " ";
         Intent intent = new Intent(this, ChooseColorActivity.class);
         startActivity(intent);

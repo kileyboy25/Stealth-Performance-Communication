@@ -40,8 +40,15 @@ public class ChooseNumberActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Session.message = Session.tempMessage;
+    }
+
     public void selectNumber(View view){
         Button button = (Button) findViewById(view.getId());
+        Session.tempMessage = Session.message;
         Session.message += button.getText() + " ";
         Intent intent = new Intent(this, ChooseLetterActivity.class);
         startActivity(intent);

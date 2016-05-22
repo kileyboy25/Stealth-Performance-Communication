@@ -48,6 +48,7 @@ public class ChooseColorActivity extends AppCompatActivity {
 
     public void selectColor(View view){
         Button button = (Button) findViewById(view.getId());
+        Session.tempMessage = Session.message;
         Session.message += button.getText();
         Intent intent = new Intent(this, ConfirmationActivity.class);
         startActivity(intent);
