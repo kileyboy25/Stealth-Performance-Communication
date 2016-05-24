@@ -43,13 +43,12 @@ public class ChooseNumberActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Session.message = Session.tempMessage;
+        Session.message.pop();
     }
 
     public void selectNumber(View view){
         Button button = (Button) findViewById(view.getId());
-        Session.tempMessage = Session.message;
-        Session.message += button.getText() + " ";
+        Session.message.push(button.getText().toString());
         Intent intent = new Intent(this, ChooseLetterActivity.class);
         startActivity(intent);
     }
