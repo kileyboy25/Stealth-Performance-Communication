@@ -44,9 +44,14 @@ public class ConfirmationActivity extends AppCompatActivity {
 
     public void onConfirmSelection(View view){
         //Send the message to clients and flush
+        addData("MESSAGE", Session.message);
         Session.message.clear();
         Intent intent = new Intent(this, ChooseNumberActivity.class);
         startActivity(intent);
+    }
+
+    public void addData(String key, Object value){
+        StealthPerformanceApplication.getFirebase().child(key).setValue(value);
     }
 
     @Override
