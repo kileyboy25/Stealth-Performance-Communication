@@ -11,6 +11,7 @@ public class Session {
     public static int CLIENT_PLAYER=2;
     private int user_session;
     public static Stack<String> message = new Stack<String>();
+    public static String clientMessage = "";
     public static int index = 0;
     public int getUser_session() {
         return user_session;

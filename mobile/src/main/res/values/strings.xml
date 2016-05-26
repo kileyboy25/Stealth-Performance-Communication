@@ -41,4 +41,6 @@
     <string name="title_activity_choose_letter">ChooseLetterActivity</string>
     <string name="title_activity_choose_number">ChooseNumberActivity</string>
     <string name="title_activity_confirmation">ConfirmationActivity</string>
+    <string name="title_activity_client_strategy">ClientStrategyActivity</string>
+    <string name="title_activity_show_description">ShowDescriptionActivity</string>
 </resources>

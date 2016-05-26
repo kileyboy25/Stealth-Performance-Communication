@@ -49,7 +49,7 @@ public class ChooseLetterActivity extends AppCompatActivity {
     public void selectLetter(View view){
         Button button = (Button) findViewById(view.getId());
         Session.message.push(button.getText().toString());
-        Intent intent = new Intent(this, ChooseColorActivity.class);
+        Intent intent = new Intent(this, ChooseNumberActivity.class);
         startActivity(intent);
     }
 }

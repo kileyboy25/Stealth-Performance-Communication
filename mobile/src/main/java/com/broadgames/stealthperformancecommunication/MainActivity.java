@@ -19,13 +19,18 @@ public class MainActivity extends AppCompatActivity {
 
     Session user_Session;
     boolean loginSuccess = false;
+    Intent serviceIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Start the background Firebase activity
-        startService(new Intent(SendNotificationService.class.getName()));
+        serviceIntent = new Intent(SendNotificationService.class.getName());
+        startService(serviceIntent);
+
+        // Clear userSession
+        user_Session = null;
     }
 
     @Override
@@ -54,29 +59,34 @@ public class MainActivity extends AppCompatActivity {
         EditText loginEditText = (EditText)findViewById(R.id.loginText);
         EditText passwordEditText = (EditText)findViewById(R.id.passwordText);
         login(loginEditText.getText().toString(),passwordEditText.getText().toString());
-        if(loginSuccess){
+        /*if(loginSuccess){
             Toast.makeText(this, loginEditText.getText().toString()+" logged in as Super-User",
                     Toast.LENGTH_LONG).show();
             if(user_Session.getUser_session()==Session.CLIENT_QUATERBACK){
-                Intent intent = new Intent(this, ChooseNumberActivity.class);
+                Intent intent = new Intent(this, ChooseLetterActivity.class);
+                startActivity(intent);
+            }else{
+                Intent intent = new Intent(this, ClientStrategyActivity.class);
                 startActivity(intent);
             }
         } else {
             Toast.makeText(this, "Incorrect Login Credentials",
                     Toast.LENGTH_LONG).show();
-            loginEditText.setText("");
-            passwordEditText.setText("");
-        }
+            //loginEditText.setText("");
+            //passwordEditText.setText("");
+        }*/
     }
     public void login(final String username, final String password) {
         StealthPerformanceApplication.getFirebase().authWithPassword(username, password, new Firebase.AuthResultHandler() {
             @Override
             public void onAuthenticated(AuthData authData) {
                 Log.d("MainActivity", "User ID: " + authData.getUid() + ", Provider: " + authData.getProvider());
-                if(authData.getUid().equalsIgnoreCase("2b6d4e49-6054-4169-b5d8-813715fc59ec")){
+                if (authData.getUid().equalsIgnoreCase("2b6d4e49-6054-4169-b5d8-813715fc59ec")) {
                     user_Session = new Session(Session.CLIENT_QUATERBACK);
-                }else{
+                    gotoQuaterbackActivity();
+                } else {
                     user_Session = new Session(Session.CLIENT_PLAYER);
+                    gotoPlayerActivity();
                 }
                 loginSuccess = true;
             }
@@ -88,5 +98,21 @@ public class MainActivity extends AppCompatActivity {
                 loginSuccess = false;
             }
         });
+    }
+
+    private void gotoPlayerActivity() {
+        EditText loginEditText = (EditText)findViewById(R.id.loginText);
+        Toast.makeText(this, loginEditText.getText().toString()+" logged in as Super-User",
+                Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, ClientStrategyActivity.class);
+        startActivity(intent);
+    }
+
+    private void gotoQuaterbackActivity() {
+        EditText loginEditText = (EditText)findViewById(R.id.loginText);
+        Toast.makeText(this, loginEditText.getText().toString()+" logged in as Super-User",
+                Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, ChooseLetterActivity.class);
+        startActivity(intent);
     }
 }

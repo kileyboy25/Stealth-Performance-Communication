@@ -2,12 +2,16 @@ package com.broadgames.stealthperformancecommunication;
 
 import android.app.Application;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.broadgames.stealthperformancecommunication.session.Session;
+import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 
-import java.util.Map;
+import java.util.List;
 
 /**
  * Created by Sugandanb on 19-05-2016.
@@ -37,6 +41,17 @@ public class StealthPerformanceApplication extends Application {
                 Log.d("MainActivity", "User creation failed" + firebaseError.getMessage());
             }
         });*/
+    }
+
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+        Session.message.clear();
+        StealthPerformanceApplication.addData("MESSAGE", Session.message);
+    }
+
+    public static void addData(String key, Object value){
+        StealthPerformanceApplication.getFirebase().child(key).setValue(value);
     }
 
     public static Firebase getFirebase(){
