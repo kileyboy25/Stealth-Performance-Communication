@@ -1,6 +1,7 @@
 package com.broadgames.stealthperformancecommunication;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -48,6 +49,7 @@ public class ChooseColorActivity extends AppCompatActivity {
 
     public void selectColor(View view){
         Button button = (Button) findViewById(view.getId());
+        //button.setBackgroundColor(Color.);
         Session.message.push(button.getText().toString());
         Intent intent = new Intent(this, ConfirmationActivity.class);
         startActivity(intent);

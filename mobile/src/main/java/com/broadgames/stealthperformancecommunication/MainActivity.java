@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.broadgames.stealthperformancecommunication.session.Session;
@@ -26,8 +27,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Start the background Firebase activity
-        serviceIntent = new Intent(SendNotificationService.class.getName());
-        startService(serviceIntent);
+        serviceIntent = new Intent(this, SendNotificationService.class);
+        this.stopService(serviceIntent);
+
+        //Attempt to show keyboard
+        RelativeLayout relativeLayout = (RelativeLayout)findViewById(R.id.mainLayout);
+        relativeLayout.clearFocus();
 
         // Clear userSession
         user_Session = null;
@@ -58,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     public void checkLogin(View view){
         EditText loginEditText = (EditText)findViewById(R.id.loginText);
         EditText passwordEditText = (EditText)findViewById(R.id.passwordText);
-        login(loginEditText.getText().toString(),passwordEditText.getText().toString());
+        login(loginEditText.getText().toString(), passwordEditText.getText().toString());
         /*if(loginSuccess){
             Toast.makeText(this, loginEditText.getText().toString()+" logged in as Super-User",
                     Toast.LENGTH_LONG).show();
@@ -82,10 +87,10 @@ public class MainActivity extends AppCompatActivity {
             public void onAuthenticated(AuthData authData) {
                 Log.d("MainActivity", "User ID: " + authData.getUid() + ", Provider: " + authData.getProvider());
                 if (authData.getUid().equalsIgnoreCase("2b6d4e49-6054-4169-b5d8-813715fc59ec")) {
-                    user_Session = new Session(Session.CLIENT_QUATERBACK);
+                    Session.user_session = Session.CLIENT_QUATERBACK;
                     gotoQuaterbackActivity();
                 } else {
-                    user_Session = new Session(Session.CLIENT_PLAYER);
+                    Session.user_session = Session.CLIENT_PLAYER;
                     gotoPlayerActivity();
                 }
                 loginSuccess = true;
@@ -94,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAuthenticationError(FirebaseError firebaseError) {
                 Log.d("MainActivity", "Error while logging in : " + firebaseError.getMessage());
+                passwordFail();
                 //createNewUser(username, password);
                 loginSuccess = false;
             }
@@ -105,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, loginEditText.getText().toString()+" logged in as Super-User",
                 Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, ClientStrategyActivity.class);
+        this.startService(serviceIntent);
         startActivity(intent);
     }
 
@@ -114,5 +121,9 @@ public class MainActivity extends AppCompatActivity {
                 Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, ChooseLetterActivity.class);
         startActivity(intent);
+    }
+
+    private void passwordFail(){
+        Toast.makeText(this, "login failed",Toast.LENGTH_LONG).show();
     }
 }

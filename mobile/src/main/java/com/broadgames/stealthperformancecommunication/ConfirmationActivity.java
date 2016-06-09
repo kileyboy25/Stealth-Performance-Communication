@@ -3,6 +3,7 @@ package com.broadgames.stealthperformancecommunication;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,7 +18,15 @@ public class ConfirmationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmation);
         TextView strategyTextView = (TextView)findViewById(R.id.finalStrategyTextView);
-        strategyTextView.setText(Session.message.toString());
+        String message = "";
+        for(int i = 0;i<Session.message.size();i++){
+            if(i<=1) {
+                message += Session.message.elementAt(i);
+            }else{
+                message +="<font color="+Session.message.elementAt(i).toUpperCase()+">"+ Session.message.elementAt(i)+"</font>";
+            }
+        }
+        strategyTextView.setText(Html.fromHtml(message));
     }
 
     @Override

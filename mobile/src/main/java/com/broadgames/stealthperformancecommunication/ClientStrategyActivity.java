@@ -3,6 +3,7 @@ package com.broadgames.stealthperformancecommunication;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,7 +25,7 @@ public class ClientStrategyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client_strategy);
         displayStrategy();
-        Log.d("Client",Session.clientMessage);
+        Log.d("Client", Session.clientMessage);
     }
 
     @Override
@@ -57,9 +58,12 @@ public class ClientStrategyActivity extends AppCompatActivity {
                 try {
                     List<String> message = (List<String>) snapshot.getValue();
                     Log.d("GetData",message.toString());
-                    for (String msg : message) {
-                        Log.d("GetData",msg);
-                        Session.clientMessage+=msg;
+                    for (int i=0;i< message.size();i++) {
+                        if(i<=1) {
+                            Session.clientMessage += message.get(i);
+                        } else {
+                            Session.clientMessage += "<font color="+message.get(i).toUpperCase()+">"+message.get(i)+"</font>";
+                        }
                     }
                     setTextView(Session.clientMessage);
                 } catch (Exception e) {
@@ -75,12 +79,11 @@ public class ClientStrategyActivity extends AppCompatActivity {
 
     private void setTextView(String message){
         TextView showStrategyText = (TextView)findViewById(R.id.showStrategyText);
-        showStrategyText.setText(message);
+        showStrategyText.setText(Html.fromHtml(message));
     }
 
     public void showDescription(View view){
         Intent intent = new Intent(this, ShowDescriptionActivity.class);
         startActivity(intent);
     }
-
 }

@@ -38,10 +38,12 @@ public class SendNotificationService extends Service {
                 //Log.d("Iterator",iterator.next().toString());
                 while(iterator.hasNext()){
                     DataSnapshot data = (DataSnapshot)iterator.next();
-                    //Log.d("SendService",data.toString());
+                    Log.d("SendService", Session.user_session+"");
                     if(data.getKey().equalsIgnoreCase("MESSAGE")) {
                         //Session.clientMessage=data.getValue().toString();
-                        postNotif(data.getValue().toString());
+                        if(Session.user_session!=Session.CLIENT_QUATERBACK) {
+                            postNotif(data.getValue().toString());
+                        }
                         //Log.d("SendService",data.getKey().toString());
                     }
                 }
