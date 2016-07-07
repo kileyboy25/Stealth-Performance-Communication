@@ -54,18 +54,21 @@ public class ClientStrategyActivity extends AppCompatActivity {
         StealthPerformanceApplication.getFirebase().child("MESSAGE").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
+                String clientMessage="";
                 Session.clientMessage="";
                 try {
                     List<String> message = (List<String>) snapshot.getValue();
                     Log.d("GetData",message.toString());
                     for (int i=0;i< message.size();i++) {
                         if(i<=1) {
+                            clientMessage += message.get(i);
                             Session.clientMessage += message.get(i);
                         } else {
-                            Session.clientMessage += "<font color="+message.get(i).toUpperCase()+">"+message.get(i)+"</font>";
+                            clientMessage += "<font color="+message.get(i).toUpperCase()+">"+message.get(i)+"</font>";
+                            Session.clientMessage += message.get(i);
                         }
                     }
-                    setTextView(Session.clientMessage);
+                    setTextView(clientMessage);
                 } catch (Exception e) {
                     Log.e("GetData", e.toString());
                 }
