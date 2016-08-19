@@ -22,9 +22,7 @@
             android:textIsSelectable="true"
             android:hint="Login ID"
             android:gravity="center"
-            android:focusable="true"
             android:enabled="true"
-            android:focusableInTouchMode="true"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true" />
 
@@ -37,9 +35,7 @@
             android:hint="Password"
             android:gravity="center"
             android:foregroundGravity="center"
-            android:focusable="true"
             android:enabled="true"
-            android:focusableInTouchMode="true"
             android:layout_below="@+id/loginText"
             android:layout_alignLeft="@+id/loginText"
             android:layout_alignStart="@+id/loginText" />
