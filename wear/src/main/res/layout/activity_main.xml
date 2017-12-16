@@ -6,8 +6,66 @@
     android:layout_height="match_parent" android:id="@+id/container" tools:context=".MainActivity"
     tools:deviceIds="wear">
 
-    <TextView android:id="@+id/text" app:layout_box="all" android:layout_width="match_parent"
-        android:layout_height="match_parent" android:text="@string/hello_world" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/loginText"
+            android:textStyle="normal"
+            android:textIsSelectable="true"
+            android:hint="Login ID"
+            android:gravity="center"
+            android:focusable="true"
+            android:enabled="true"
+            android:layout_above="@+id/passwordText"
+            android:layout_alignStart="@+id/loginButton"
+            android:layout_alignEnd="@+id/loginButton"
+            android:inputType="textPersonName"
+            android:editable="true" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/passwordText"
+            android:hint="Password"
+            android:gravity="center"
+            android:foregroundGravity="center"
+            android:focusable="true"
+            android:enabled="true"
+            android:layout_above="@+id/loginButton"
+            android:layout_alignEnd="@+id/loginButton"
+            android:layout_toEndOf="@+id/loginText"
+            android:layout_alignStart="@+id/loginButton" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="SPC"
+            android:id="@+id/TitleText"
+            android:gravity="center"
+            android:textColor="#ff0700"
+            android:textStyle="bold"
+            android:textSize="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/loginText" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:id="@+id/loginButton"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
 
     <TextView android:id="@+id/clock" app:layout_box="all" android:layout_gravity="bottom|start"
         android:layout_width="wrap_content" android:layout_height="wrap_content"

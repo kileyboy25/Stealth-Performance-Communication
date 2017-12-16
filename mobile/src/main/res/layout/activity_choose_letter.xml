@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:weightSum="1"
+        android:gravity="center">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_weight="0.3333"
+            android:layout_height="0dp">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/letter_a"
+                android:id="@+id/letterButtonA"
+                android:layout_below="@+id/numberButton2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_weight="1"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:onClick="selectLetter"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/letter_b"
+                android:id="@+id/letterButtonB"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:onClick="selectLetter"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/letter_c"
+                android:id="@+id/letterButtonC"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:onClick="selectLetter"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_weight="0.3333"
+            android:layout_height="0dp" >
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/letter_d"
+                android:id="@+id/letterButtonD"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_weight="1"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:onClick="selectLetter"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/letter_e"
+                android:id="@+id/letterButtonE"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:onClick="selectLetter"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/letter_f"
+                android:id="@+id/letterButtonF"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:onClick="selectLetter"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_weight="0.3333"
+            android:layout_height="0dp" >
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/letter_g"
+                android:id="@+id/letterButtonG"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_weight="1"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:onClick="selectLetter"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/letter_h"
+                android:id="@+id/letterButtonH"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:onClick="selectLetter"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/letter_i"
+                android:id="@+id/letterButtonI"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:onClick="selectLetter"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

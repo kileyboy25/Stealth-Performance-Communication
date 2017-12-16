@@ -3,6 +3,7 @@
     package="com.broadgames.stealthperformancecommunication" >
 
     <application
+        android:name=".StealthPerformanceApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,6 +16,52 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ChooseColorActivity"
+            android:label="@string/title_activity_choose_color" >
+        </activity>
+        <activity
+            android:name=".ChooseLetterActivity"
+            android:label="@string/title_activity_choose_letter"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.broadgames.stealthperformancecommunication.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ChooseNumberActivity"
+            android:label="@string/title_activity_choose_number" >
+        </activity>
+        <activity
+            android:name=".ConfirmationActivity"
+            android:label="@string/title_activity_confirmation" >
+        </activity>
+
+        <service
+            android:name=".SendNotificationService"
+            android:exported="false"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="com.broadgames.stealthperformancecommunication.SendNotificationService" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".ClientStrategyActivity"
+            android:label="@string/title_activity_client_strategy"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.broadgames.stealthperformancecommunication.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ShowDescriptionActivity"
+            android:label="@string/title_activity_show_description"
+            android:parentActivityName=".ClientStrategyActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.broadgames.stealthperformancecommunication.ClientStrategyActivity" />
         </activity>
     </application>
 

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:weightSum="1"
+        android:gravity="center">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_weight="0.3333"
+            android:layout_height="0dp">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/number_1"
+                android:id="@+id/numberButton1"
+                android:layout_below="@+id/numberButton2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_weight="1"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:onClick="selectNumber"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/number_2"
+                android:id="@+id/numberButton2"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:onClick="selectNumber"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/number_3"
+                android:id="@+id/numberButton3"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:onClick="selectNumber"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_weight="0.3333"
+            android:layout_height="0dp" >
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/number_4"
+                android:id="@+id/numberButton4"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_weight="1"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:onClick="selectNumber"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/number_5"
+                android:id="@+id/numberButton5"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:onClick="selectNumber"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/number_6"
+                android:id="@+id/numberButton6"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:onClick="selectNumber"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_weight="0.3333"
+            android:layout_height="0dp" >
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/number_7"
+                android:id="@+id/numberButton7"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_weight="1"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:onClick="selectNumber"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/number_8"
+                android:id="@+id/numberButton8"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:onClick="selectNumber"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/number_9"
+                android:id="@+id/numberButton9"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textSize="@dimen/notification_large_icon_width"
+                android:onClick="selectNumber"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>
